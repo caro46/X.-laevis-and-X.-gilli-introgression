@@ -1,0 +1,146 @@
+<span style="background-color:#eee">Goodness of fit tests</span>
+---------------------
+We perform goodness of fit tests (using point estimates and posterior distribution from our mimar analysis) on the models for which we have a good mixing and convergence of 2 runs, as suggested by [Becquet 2010](https://biotech.inbre.alaska.edu/fungal_portal/program_docs/MIMARgofdoc.pdf).
+
+##Using point estimates (perlgofest script)
+
+We used estimated mode of parameters from the run with the highest acceptance rate. Following is the details of the script for XG_only_M_A
+We need to specify the recombination rate we used during the MIMAR analysis (from an exponential distribution prior `-r e 1.667`).
+
+```perl
+
+#!/usr/bin/perl
+
+############# Parameters Setting ###############
+my $nloci=14;                  # number of loci in input file
+my $mu=2.47e-9;                  # mutation rate per base pair
+my $int=1000;                 # number data sets simulated 
+my $inputfile="XGonly.in";   # input file name
+my $outfile="outputgofest_XG_M_A_FT_2ndRun";   # output file name
+my @temp;
+$temp[1]=0.00239199;          # theta_1
+$temp[2]=0.00239199;          # theta_2
+$temp[3]=8.50043e+06;             # T in generation
+$temp[4]=0.00239199;               # theta_A
+$temp[5]=0.372512;            # M12 or M
+#$temp[6]=0.878097;            # M21 or M
+
+#### NOTE: The commande line is for a *simple* Isolation-Migration model and has no recombination
+#### - Needs to add switch -r to include recombination and any other switches used for MIMAR analysis if the model was more complex.
+my $cmd_line="./mimargof $nloci -lf $inputfile -u $mu -t $temp[1] -ej $temp[3] -N  $temp[4] -n $temp[2] -M $temp[5] -r e 1.667>>$outfile";
+
+########### End of parameters and option seting ############
+
+
+$count=1;               # number of sets of parameters analyzed
+ while($count<$int+1)   # Loop along MIMAR output file
+ {   
+     if($count==1)      # Write header
+     {
+         open (FILE, ">$outfile")|| die "Can't open FILEIN: $fparam!\n";
+         print FILE "Sim#\tStep#\tS1\tS2\tSs\tSf\tFst\tpi1\tpi2\tD1\tD2\n";
+         print FILE "$count\tNA\t";
+         close FILE;
+     }
+     else               # following simulations
+     {
+         open (FILE, ">>$outfile")|| die "Can't open FILEIN: $fparam!\n";
+         print FILE "$count\tNA\t";
+         close FILE;           
+     }
+     system($cmd_line);
+     $count+=1;
+}
+
+
+close(FILEIN);
+
+```
+### Table of seeds used for the 2 runs
+Two independant (with different seeds) runs are performed for each datasets. Be careful, conversely to the MIMAR analysis (in the exsoutput file), we can't find the seeds used at the beginning of the analysis, so we need to keep them before running the script in case we need to re-do the same analysis. 
+
+| Datasets   |      Run 1      |  Run 2 |
+|---------------|-------------|------|
+| All_XLXG      | 24777 53044 52121     | 27843 9729 62840     |
+| XG_only       | 5488 40460 28354     |  10099 51201 36748      |
+| XLXG_east     |      |         |
+| XLXG_west     | 24777 53044 52121     | 14696 42924 17837        |
+
+
+##By sampling from the estimated posterior distribution (perlgof script)
+
+Here is an example of the parameters used for XG_only_M_A_FT. For all datasets we used `$int=10` as suggested by [Becquet](https://biotech.inbre.alaska.edu/fungal_portal/program_docs/MIMARgofdoc.pdf) for analysis with a number of steps > 1000.
+Conversely to the estimate point method, we don't need to specify the value for the different parameters (they are directly read from the outputfile of MIMAR).
+We need to specify the recombination rate within `my $extra_switches`.
+
+```perl
+
+#!/usr/bin/perl
+
+############# Parameters Setting ###############
+my $nloci=14;                  # number of loci in input file
+my $mu=2.47E-09;                  # mutation rate per base pair
+my $int=10;                   # number of steps between simulated steps
+my $addburnin=0;              # number of lines to ignore for burnin
+my $inputfile="XGonly.in";   # input file name
+my $outfile="outputgof_post_XG_M_A_FT_Run2";     # output file name
+my $post_dist="outputmimar_XG_M_A_Run1"; # name of the standard output file from MIMAR (i.e., with the estimated posterior distributions)
+
+#### NOTE: The commande line for gof below is for a *simple* Isolation-Migration model and has no recombination
+#### - Needs to add switch -r to include recombination and any other switches used for MIMAR analysis if the model was more complex.
+my $extra_switches="-r e 1.667";
+
+########### End of parameters and option seting ############
+
+open (FILEIN, $post_dist)|| die "Can't open FILEIN: $post_dist!\n";
+my $sent=$_;
+chomp($sent);   	
+my @temp=split(/\t/,$sent);
+my $count=0;
+while($count<12+$addburnin)   # Loop to avoid the begining of MIMAR output file
+{
+    $sent = readline FILEIN;
+    chomp($sent); 
+    @temp=split(/\t/,$sent);
+    $count++;
+}
+$count=1;          # number of sets of parameters analyzed
+my $nparam=$int-1; # initialization for interval between steps 
+ while(<FILEIN>)   # Loop along MIMAR output file
+ { 
+     $sent=$_;     # New line
+     $nparam++ ;
+     if($nparam==$int)
+     {     
+         chomp($sent);   
+         my @temp=split(/\t/,$sent);
+         
+         if($count==1)              # Initial simulation
+         {
+             open (FILE, ">$outfile")|| die "Can't open FILEIN: $outfile!\n";
+             print FILE "Sim#\tStep#\tS1\tS2\tSs\tSf\tFst\tpi1\tpi2\tD1\tD2\n";
+             print FILE "$count\t$temp[0]\t";
+             close FILE;
+         }
+         else                      # following simulations
+         {
+             open (FILE, ">>$outfile")|| die "Can't open FILEIN: $outfile!\n";
+             print FILE "$count\t$temp[0]\t";
+             close FILE;           
+         }
+          system("./mimargof $nloci -lf $inputfile -u $mu -t $temp[1] -ej $temp[4] -N $temp[5] -n $temp[2] -m 1 2 $temp[6] -m 2 1 $temp[7] $extra_switches >>$outfile");
+         $count+=1;
+         $nparam=0;
+     }   
+}
+close(FILEIN);
+
+```
+### Table of seeds used for the 2 runs
+
+| Datasets   |      Run 1      |  Run 2 |
+|---------------|-------------|------|
+| All_XLXG      | 58416 20785 7777     |   6787 40553 11750      |
+| XG_only       | 57189 23856 31601     |   38159 27501 8870      |
+| XLXG_east     |      |         |
+| XLXG_west     | 16124 25146 8732     |  22573 43354 15317       |
