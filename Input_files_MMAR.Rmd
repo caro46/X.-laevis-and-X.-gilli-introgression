@@ -296,3 +296,36 @@ The program calculates 3 types of derived segregating sites:
 </ul>
 
 In the output file, we have the position of each sites corresponding to the different types of segregating sites (line1: S1=specific to population 1, S2=specific to population 2, S_s=shared by population 1 and 2, S_f=fixed in population 1 or population 2)
+
+<span style="background-color:#eee">How to specify a model (on kraken on [Sharcnet](https://www.sharcnet.ca/my/front/)) </span> 
+---------------------
+```
+sqsub -r duration -o outputmimar ./mimar nsteps bsteps Y -lf input -u nu -t teta1 -n teta2 -ej T -N tetaA -M M -i int -x ngen -yt -L osteps -v V(teta1) V(teta2) V(T) V(tetaA) V(M12) V(M21) -r rho -o exsoutput
+
+```
+> With:
+>
+>  - duration: time allowed on sharcnet to run the job
+>  nsteps: total number of steps (if "-yt" is useds, in minutes) = burnin + following MCMC steps
+>
+>  - bsteps: number of burnin
+>
+>  - Y: number of *loci*
+>
+>  - nu: generational mutation rate / bp
+>
+>  - teta1, teta2, tetaA: population mutation rates / bp. If teta2 & tetaA not specified: equal to teta1. If we use "u a b" as a teta, it means Unif[a,b]
+>
+>  - T: split time in generaions
+>
+>  - int: interval between accepted parameters
+>
+>  - ngen: number of genealogies to estimate the likelihood at each *locus*
+>
+>  - osteps: number of steps separating intermediate summary outputfiles ("-yt": in minutes)
+>
+>      <font color='red'>! Be careful</font>: if osteps < bsteps: empty histograms 
+>
+>  - V(teta*i*): variances for the kernel distribution of parameters
+>
+>  - rho: population cross-over rate parameter
