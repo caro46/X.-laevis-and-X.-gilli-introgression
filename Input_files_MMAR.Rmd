@@ -1,4 +1,4 @@
-<span style="background-color:#eee">Input files for MIMAR software </span>
+<span style="background-color:#eee">Input files for [MIMAR software](http://przeworski.uchicago.edu/cbecquet/MIMARdoc.pdf) </span>
 ---------------------
 ```
 Name length x_y v_y w_y n_1 n_2 S_1 S_2 S_s S_f //
