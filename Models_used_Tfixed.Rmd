@@ -322,6 +322,27 @@ sqsub -r 7d -o outputmimar ./mimar 400000 100000 14 -lf XGonly.in -u 2.47E-09 -t
 #XG_only_mimar_noM_Ad_FT   11738723 #####To run after some are done -> too many jobs running on  DEC10: try on kraken if it is killed try on iqaluk 
 sqsub -r 7d -o outputmimar ./mimar 500000 100000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.015 -ej 8500000 -i 10000 -x 100 -y t -L 90 -v 0.09 0 0 0 0 0 -r e 1.667 -o exsoutput 
 
+#XG_only_mimar_noM_Ae_FT
+sqsub -r 7d -o outputmimar ./mimar 500000 100000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 200 -y t -L 90 -v 0.000005 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Ae_FT_shorter
+sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 200 -y t -L 90 -v 0.000005 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XG_only_mimar_noM_Af_FT
+sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.00002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XG_only_mimar_noM_Ag_FT
+sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.0002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XG_only_mimar_noM_Ah_FT
+sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XG_only_mimar_noM_Ai_FT
+sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.02 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XG_only_mimar_noM_Aj_FT
+sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.2 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
 
 ###KRAKEN
 
