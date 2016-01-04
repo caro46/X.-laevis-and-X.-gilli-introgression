@@ -515,6 +515,57 @@ sqsub -r 7d -o outputmimar ./mimar 6000 1000 14 -lf XLXGeast.in -u 2.47E-09 -t u
 #XLXG_east_noM_R_FT
 sqsub -r 7d -o outputmimar ./mimar 6000 1000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 10000 -x 100 -y t -L 90 -v 0.05 0 0 0 0 0 -r e 1.667 -o exsoutput 
 
+#XLXG_east_noM_T_FT 11784231
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.2 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_U_FT 11784232
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.02 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_V_FT 11784237
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_W_FT 11784303
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_X_FT 11784304
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Y_FT 11784305
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Z_FT 11784306
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.4 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Aa_FT 11784307
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.04 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ab_FT 11784308
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ac_FT 11784309
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ad_FT 11784310
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ae_FT 11784311
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Af_FT 11784312
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.08 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ag_FT 11784313
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ah_FT 11784314
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Ai_FT 11784315
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_east_noM_Aj_FT 11784317
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
 ```
 
 . <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
@@ -632,6 +683,57 @@ sqsub -r 7d -o outputmimar ./mimar 6000 1000 14 -lf XLXGwest.in -u 2.47E-09 -t u
 #XLXG_west_noM_U 11759930
 
 sqsub -r 7d -o outputmimar ./mimar 6000 1000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.1 -ej 16700000 -i 1000 -x 100 -y t -L 90 -v 0.3 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_V_FT 11784387
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.2 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_W_FT 11784388
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.02 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_X_FT 11784389
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Y_FT 11784390
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Z_FT 11784391
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Aa_FT 11784392
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000002 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ab_FT 11784393
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.4 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ac_FT 11784394
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.04 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ad_FT 11784395
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ae_FT 11784396
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Af_FT 11784397
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ag_FT 11784398
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ah_FT 11784399
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.08 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ai_FT 11784400
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Aj_FT 11784401
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Ak_FT 11784402
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00008 0 0 0 0 0 -r e 1.667 -o exsoutput 
+
+#XLXG_west_noM_Al_FT 11784403
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000008 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 ```
 * <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
