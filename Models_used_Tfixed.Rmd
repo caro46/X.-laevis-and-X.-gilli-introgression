@@ -346,6 +346,9 @@ sqsub -r 7d -o outputmimar ./mimar 6000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 #XG_only_Ak 11786953
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00002 0 0 0 0 0 -r e 1.667 -o exsoutput
 
+#XG_only_mimar_noM_Al_FT 11786979
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0002 0 0 0 0 0 -r e 1.667 -o exsoutput
+
 ###KRAKEN
 
 #XG_noM_0_FT_kraken #11695567
