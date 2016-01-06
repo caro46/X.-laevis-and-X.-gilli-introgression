@@ -571,7 +571,7 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t 
 #XLXG_east_noM_Aj_FT 11784317
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000008 0 0 0 0 0 -r e 1.667 -o exsoutput 
 ```
-Check on jan. 5th: more promising: Ac(exs-12): V4(=acceptance rate)~0.0013, Ah(exs-12): V4~0.0006 
+Check on jan. 5th: more promising: Ac(exs-12): V4(=acceptance rate)~0.0013, Ah(exs-12): V4~0.0006 -> try models with kernel variance between the kernel variance of the most "promising models"
 ```
 jan5
 #XLXG_east_noM_Ak_FT 11786119
@@ -777,7 +777,7 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t 
 #XLXG_west_noM_Al_FT 11784403
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000008 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
-Check on jan. 5th: more promising: Y: V4(=acceptance rate)~0.001, Ae/Aj: V4~0.001
+Check on jan. 5th: more promising: Y: V4(=acceptance rate)~0.001, Ae/Aj: V4~0.001 
 ```
 
 jan5
@@ -817,7 +817,22 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t 
 ```
 Check on jan. 6th: more promising: Am(exs-12):V4~0.0006, As(exs-13):V4~0.0007, Au(exs.-13):V4~0.008, Av(exs.-13):V4~0.0006
 ```
+jan.6_goblin
 
+#XLXG_west_noM_Ax_FT 1394038
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00045 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Ay_FT 1394040
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00048 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Az_FT 1394041
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00055 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Ba_FT 1394043
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00058 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Bb_FT 1394045
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 * <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
 
