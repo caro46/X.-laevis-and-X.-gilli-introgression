@@ -834,6 +834,11 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t 
 #XLXG_west_noM_Bb_FT 1394045
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
+Try if a better improvement with -i=3000 (use Ae parameters) & -x=150 (=Bc)
+```
+#XLXG_west_noM_Bc_FT 1394048
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 3000 -x 150 -y t -L 90 -v 0.0004 0 0 0 0 0 -r e 1.667 -o exsoutput 
+```
 * <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
 
 ```
