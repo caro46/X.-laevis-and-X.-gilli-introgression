@@ -586,6 +586,23 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t 
 
 #XLXG_east_noM_Ao_FT 11786123
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00035 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+janv 6_goblin
+
+#XLXG_east_noM_Ap_FT 1394026
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00042 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_Aq_FT 1394027
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00045 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_Ar_FT 1394028
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00055 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_As_FT 1394029
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00058 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_At_FT 1394030
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 
 . <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
