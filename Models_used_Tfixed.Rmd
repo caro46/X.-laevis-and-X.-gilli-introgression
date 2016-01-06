@@ -376,14 +376,19 @@ sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 200 -y t -L 90 -v 0.00008 0 0 0 0 0 -r e 1.667 -o exsoutput 
 ```
 ```
-XG_Y_short 11759931
-
+#XG_Y_short 11759931
 sqsub -r 7d -o outputmimar ./mimar 5000 1000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 850000 0 -i 10000 -x 200 -y t -L 90 -v 0.00002 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 
-XG_Y_short_2 11759932
-
+#XG_Y_short_2 11759932
 sqsub -r 7d -o outputmimar ./mimar 5000 1000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 850000 0 -i 1000 -x 150 -y t -L 90 -v 0.00002 0 0 0 0 0 -r e 1.667 -o exsoutput
+```
+```
+#mimar_noM_Ah_longer 11781892
+sqsub -r 7d -o outputmimar_relauch ./mimar 12000 0 14 -R outputmimar-R 1.611e+06 0.00769844 0.00769844 2.72718 8.5e+06 0.00769844 0 0 6.33641e-89 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.002 0 0 0 0 0 -r e 1.667 -o exsoutput-R
+
+#XG_Ai_longer 11791103
+sqsub -r 7d -o outputmimar_relauch ./mimar 8000 0 14 -R outputmimar-R 1.61e+06 0.00895904 0.00895904 2.34344 8.5e+06 0.00895904 0 0 3.03701e-89 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.02 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
