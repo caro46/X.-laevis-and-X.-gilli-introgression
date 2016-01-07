@@ -873,6 +873,23 @@ Try if a better improvement with -i=3000 (use Ae parameters) & -x=150 (=Bc)
 #XLXG_west_noM_Bc_FT 1394048
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 3000 -x 150 -y t -L 90 -v 0.0004 0 0 0 0 0 -r e 1.667 -o exsoutput 
 ```
+```
+jan7 Kraken
+
+Try setting the kernel variance to ~1/40-1/50 of the upper limit of the parameter distribution
+
+#XLXG_west_noM_Bd_FT 11792971
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.001 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Be_FT 11792987
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0014 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Bf_FT 11793002
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0017 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_west_noM_Bg_FT 11793015
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0018 0 0 0 0 0 -r e 1.667 -o exsoutput
+```
 * <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
 
 ```
