@@ -5,6 +5,10 @@ In previous Mimar analysis, we mainly have problems with the upper limit of T di
 Fixing T parameter induces to not drawing T plots (need to change Rconv script before executing it).
 We run the jobs on kraken (when it is not specified) & on iqaluk to run for a longer time bigger jobs (specified in the comments) of sharcnet. 
 
+**Complements**
+- Big values of -i are used to see if it has a high impact on value 5=number of steps rejected with the Hasting ratio h < 1 (and so value 4=acceptance rate) of exsoutput
+- High values of steps and burnin are used to try to keep only "good" steps (low convergence and very bad value 4 at the begining) - only 1000-10000 recorded steps are needed for the analysis - to regularly check the analysis we keep -L=90 (output generated every 90 min)
+
 ### 1- For all the populations included (*i.e.* east and west populations are included) of *Xenopus gilli* and *Xenopus laevis* (in the model we consider *X.gilli* as population 1 and *X. laevis* as population 2) - all_XLXG
 
 
