@@ -393,6 +393,9 @@ sqsub -r 7d -o outputmimar_relauch ./mimar 12000 0 14 -R outputmimar-R 1.611e+06
 
 #XG_Ai_longer 11791103
 sqsub -r 7d -o outputmimar_relauch ./mimar 8000 0 14 -R outputmimar-R 1.61e+06 0.00895904 0.00895904 2.34344 8.5e+06 0.00895904 0 0 3.03701e-89 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.02 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Am (=Ae with -i=2000, -x=100) Goblin 1394198
+sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.000005 0 0 0 0 0 -r e 1.667 -o exsoutput 
 ```
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
