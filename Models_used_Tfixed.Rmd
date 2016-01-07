@@ -623,6 +623,25 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t 
 
 #XLXG_east_noM_At_FT 1394030
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+jan7
+
+Try setting the kernel variance to ~1/40-1/50 of the upper limit of the parameter distribution
+
+#XLXG_east_noM_Au_FT 1394264
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.001 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_Av_FT 1394282
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0015 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_Aw_FT 1394302
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0014 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_Ax_FT 1394305
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0017 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XLXG_east_noM_Ay_FT 1394309
+sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0018 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 
 . <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
