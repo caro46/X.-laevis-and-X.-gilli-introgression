@@ -409,6 +409,15 @@ sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 
 #XG_noM_Aq_FT 11796478
 sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0008 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Ar_FT 11796500
+sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0003 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_As_FT 11796501
+sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0004 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_At_FT 11796502
+sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00025 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
