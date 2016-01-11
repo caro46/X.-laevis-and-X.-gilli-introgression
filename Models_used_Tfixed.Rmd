@@ -418,6 +418,25 @@ sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 
 #XG_only_mimar_noM_At_FT 11796502
 sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00025 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+jan11
+#XG_only_mimar_noM_Au_FT 11807323
+sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0006 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Av_FT 11807324
+sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Aw_FT 11807325
+sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0007 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Ax_FT 11807326
+sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00075 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Ay_FT 11807327
+sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00035 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_only_mimar_noM_Az_FT 11807328
+sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00045 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
