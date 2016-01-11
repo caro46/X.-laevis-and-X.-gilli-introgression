@@ -664,6 +664,17 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t 
 
 #XLXG_east_noM_Ay_FT 1394309
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0018 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+jan 11
+
+#XLXG_east_noM_Y_FT_relauch 11807318
+sqsub -r 7d -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 602001 0.0519229 0.0519229 0.794428 1.67e+07 0.0519229 0 0 1.34268e-205 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000002 0 0 0 0 0 -r e 1.667 -o exsoutput-R >emptypost
+
+#XLXG_east_noM_Ah_FT_relauch 11807319
+sqsub -r 7d -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.102e+06 0.0159269 0.0159269 2.5899 1.67e+07 0.0159269 0 0 8.27649e-133 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0008 0 0 0 0 0 -r e 1.667 -o exsoutput-R >emptypost
+
+#XLXG_east_noM_Al_FT_relauch 11807320
+sqsub -r 7d -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.17e+06 0.0148768 0.0148768 2.77271 1.67e+07 0.0148768 0 0 3.78431e-132 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0006 0 0 0 0 0 -r e 1.667 -o exsoutput-R >emptypost
 ```
 
 . <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
