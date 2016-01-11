@@ -919,6 +919,13 @@ sqsub -r 7d -o outputmimar_relauch ./mimar 8500 0 14 -R outputmimar-R 1.426e+06 
 
 #XLXG_west_noM_X_FT_relauch 11804434
 sqsub -r 7d -o outputmimar_relauch ./mimar 8500 0 14 -R outputmimar-R 1.562e+06 0.0170876 0.0170876 2.41397 1.67e+07 0.0170876 0 0 5.63826e-151 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.002 0 0 0 0 0 -r e 1.667 -o exsoutput-R >emptypost
+
+janv11_Kraken
+#XLXG_west_noM_Am_FT_relauch 11807316
+sqsub -r 7d -o outputmimar_relauch ./mimar 8500 0 14 -R outputmimar-R 1.424e+06 0.0173111 0.0173111 2.38281 1.67e+07 0.0173111 0 0 2.2528e-148 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00085 0 0 0 0 0 -r e 1.667 -o exsoutput-R >emptypost
+
+#XLXG_west_noM_Av_FT_relauch 11807317
+sqsub -r 7d -o outputmimar_relauch ./mimar 8500 0 14 -R outputmimar-R 1.39e+06 0.0181244 0.0181244 2.27588 1.67e+07 0.0181244 0 0 1.07692e-150 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0006 0 0 0 0 0 -r e 1.667 -o exsoutput-R >emptypost
 ```
 * <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
 
