@@ -437,6 +437,16 @@ sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 
 #XG_only_mimar_noM_Az_FT 11807328
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00045 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#mimar_noM_Ah_longer1 11811568
+sqsub -r 7d -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.611e+06 0.00769844 0.00769844 2.72718 8.5e+06 0.00769844 0 0 6.33641e-89 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 1000 -x 100 -y t -L 90 -v 0.002 0 0 0 0 0 -r e 1.667 -o exsoutput-R
+```
+```
+#XG_noM_Ap_FT_2ndRun 11839352 seeds 53132 24309 59434
+sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0005 0 0 0 0 0 -r e 1.667 -o exsoutput
+
+#XG_noM_Ap_FT_longer
+sqsub -r 7d -o -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.896e+06 0.0101924 0.0101924 2.05987 8.5e+06 0.0101924 0 0 5.35169e-90 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0005 0 0 0 0 0 -r e 1.667 -o exsoutput-R
 ```
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
