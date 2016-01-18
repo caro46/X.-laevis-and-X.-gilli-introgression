@@ -420,22 +420,22 @@ sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00025 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 jan11
-#XG_only_mimar_noM_Au_FT 11807323
+#XG_only_mimar_noM_Au_FT 11807323 -> mimar krasched
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0006 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XG_only_mimar_noM_Av_FT 11807324
+#XG_only_mimar_noM_Av_FT 11807324 -> mimar krasched
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XG_only_mimar_noM_Aw_FT 11807325
+#XG_only_mimar_noM_Aw_FT 11807325 -> mimar krasched
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0007 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XG_only_mimar_noM_Ax_FT 11807326
+#XG_only_mimar_noM_Ax_FT 11807326 -> Bus error (memory access)
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00075 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 #XG_only_mimar_noM_Ay_FT 11807327
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00035 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XG_only_mimar_noM_Az_FT 11807328
+#XG_only_mimar_noM_Az_FT 11807328 -> Bus error (memory access)
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00045 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 #mimar_noM_Ah_longer1 11811568
@@ -445,8 +445,8 @@ sqsub -r 7d -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.611e+06 
 #XG_noM_Ap_FT_2ndRun 11839352 seeds 53132 24309 59434
 sqsub -r 7d -o outputmimar ./mimar 8500 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0005 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XG_noM_Ap_FT_longer
-sqsub -r 7d -o -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.896e+06 0.0101924 0.0101924 2.05987 8.5e+06 0.0101924 0 0 5.35169e-90 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0005 0 0 0 0 0 -r e 1.667 -o exsoutput-R
+#XG_noM_Ap_FT_longer 11846307
+sqsub -r 7d -o outputmimar_relauch ./mimar 9000 0 14 -R outputmimar-R 1.896e+06 0.0101924 0.0101924 2.05987 8.5e+06 0.0101924 0 0 5.35169e-90 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0005 0 0 0 0 0 -r e 1.667 -o exsoutput-R
 ```
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
@@ -669,10 +669,10 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t 
 #XLXG_east_noM_Ar_FT 1394028
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00055 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XLXG_east_noM_As_FT 1394029
+#XLXG_east_noM_As_FT 1394029 -> Bus error
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00058 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XLXG_east_noM_At_FT 1394030
+#XLXG_east_noM_At_FT 1394030 -> Bus error
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 jan7
@@ -688,7 +688,7 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t 
 #XLXG_east_noM_Aw_FT 1394302
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0014 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XLXG_east_noM_Ax_FT 1394305
+#XLXG_east_noM_Ax_FT 1394305 -> Bus error
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0017 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 #XLXG_east_noM_Ay_FT 1394309
@@ -927,12 +927,12 @@ sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t 
 #XLXG_west_noM_Ba_FT 1394043
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00058 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XLXG_west_noM_Bb_FT 1394045
+#XLXG_west_noM_Bb_FT 1394045 -> Bus error
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.00065 0 0 0 0 0 -r e 1.667 -o exsoutput
 ```
 Try if a better improvement with -i=3000 (use Ae parameters) & -x=150 (=Bc)
 ```
-#XLXG_west_noM_Bc_FT 1394048
+#XLXG_west_noM_Bc_FT 1394048 -> Bus error
 sqsub -r 7d -o outputmimar ./mimar 8000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 3000 -x 150 -y t -L 90 -v 0.0004 0 0 0 0 0 -r e 1.667 -o exsoutput 
 ```
 ```
