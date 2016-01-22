@@ -94,7 +94,7 @@ sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 3.14e-9 -t u 
 sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 3.14e-9 -t u 0.000005 0.03 -n u 0.000005 0.03 -ej u 0 50000 -N u 0.0000001 0.03 -i 1000 -x 10 -y t -L 90 -v 0.0007 0.0007 700000 0.004 .7 .7 -r e 1.667 -o exsoutput 
 
 ```
-####    <u>With [new][2] mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
 ```
 # C:
 sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 4000000 -i 1000 -x 10 -y t -L 90 -v 0.0009 0.0004 840000 0.01 .4 0 -r e 1.667 -o exsoutput 
@@ -108,7 +108,7 @@ C#11531878_2ndRun#Seed=19532 73224 52125
 sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 4000000 -i 1000 -x 10 -y t -L 90 -v 0.0009 0.0004 840000 0.01 .4 0 -r e 1.667 -o exsoutput 
 ```
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # F: 
@@ -145,7 +145,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XGonly.in -u 3.14e-9 -t 
 ```
 > **Results** - Mixing: E: good mixing after ~150000 -> increase the variance of the kernel distribution for T, decrease for teta1 & M + increase the burnin (F)
 
-####    <u>With [new][2] mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
 
 ```
 # F:
@@ -172,7 +172,7 @@ I#11558715 -> killed
 sqsub -r 7d -o outputmimar ./mimar 40000 100000 14 -lf XGonly.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 2000000000 -M l -8 3 -i 1000 -x 100 -y t -L 90 -v 0.0009 0.0004 800000 0.01 .4 0 -r e 1.667 -o exsoutput 
 b#11583924
 ```
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # D:
@@ -210,7 +210,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XGonly.in -u 3.14e-9 -t 
 # C:
 sqsub -r 1440m -o outputmimar ./mimar 4000 11000 14 -lf XGonly.in -u 3.14e-9 -t u 0.000005 0.03 -n u 0.000005 0.03 -ej u 0 50000 -N u 0.0000001 0.03 -i 1000 -x 10 -y t -L 90 -v 0.0007 0.0007 1000000 0.006 .7 .7 -r e 1.667 -o exsoutput 
 ```
-####    <u>With [new][2] mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
 
 ```
 # D:
@@ -220,7 +220,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XGonly.in -u 4.45E-09 -t
 >
 > **Results**: job killed (too long), rerun: Ok -> Good mixing for 2 runs
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # C:
@@ -254,7 +254,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGeast.in -u 3.14e-9 -
 ```
 > **Results** - Mixing: E: ~not bad mixing -> increase the variance of the kernel distribution for T, decrease for teta1 & M & increase the burnin (F)
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on my account*</u>
 
 ```
 # F: 
@@ -264,7 +264,7 @@ sqsub -r 1440m -o outputmimar ./mimar 40000 150000 14 -lf XLXGeast.in -u 4.45E-0
 >
 > **Results**: job killed (too long?) 
 
-####    <u>With [new][2] mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
 
 ```
 # G: 
@@ -291,7 +291,7 @@ sqsub -r 7d -o outputmimar ./mimar 40000 100000 14 -lf XLXGeast.in -u 4.45E-09 -
 > **Results** - J: job killed
 
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # C:
@@ -331,7 +331,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGeast.in -u 3.14e-9 -
 sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGeast.in -u 3.14e-9 -t u 0.000005 0.03 -n u 0.000005 0.03 -ej u 0 50000 -N u 0.0000001 0.03 -i 1000 -x 10 -y t -L 90 -v 0.0003 0.0003 300000 0.002 .3 .3 -r e 1.667 -o exsoutput 
 ```
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on my account*</u>
 
 ```
 # D:
@@ -352,7 +352,7 @@ sqsub -r 7d -o outputmimar ./mimar 40000 100000 14 -lf XLXGeast.in -u 4.45E-09 -
 G#11541648
 sqsub -r 7d -o outputmimar ./mimar 40000 100000 14 -lf XLXGeast.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 5000000 -i 1000 -x 100 -y t -L 90 -v 0.00002 0.00001 20000 0.0001 .4 0 -r e 1.667 -o exsoutput 
 ```
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # C: 
@@ -406,7 +406,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGwest.in -u 3.14e-9 -
 sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGwest.in -u 3.14e-9 -t u 0.000005 0.003 -n u 0.000005 0.06 -ej u 0 80000 -N u 0.0000001 0.09 -M l -8 3 -i 1000 -x 10 -y t -L 90 -v 0.0009 0.0004 840000 0.01 .4 0 -r e 1.667 -o exsoutput 
 
 ```
-####    <u>With [new][2] mutation rate (4.45E-09) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on my account*</u>
 
 ```
 # G:
@@ -451,7 +451,7 @@ M#11583911
 sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf XLXGwest.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 200000000 -M l -8 3 -i 1000 -x 100 -y t -L 90 -v 0.0009 0.0004 4000000 0.01 .4 0 -r e 1.667 -o exsoutput
 ```
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # D:
@@ -498,7 +498,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGwest.in -u 3.14e-9 -
 sqsub -r 1440m -o outputmimar ./mimar 4500 10000 14 -lf XLXGwest.in -u 3.14e-9 -t u 0.000005 0.03 -n u 0.000005 0.03 -ej u 0 50000 -N u 0.0000001 0.03 -i 1000 -x 10 -y t -L 90 -v 0.0007 0.004 1000000 0.009 .7 .7 -r e 1.667 -o exsoutput 
 
 ```
-####    <u>With [new][2] mutation rate (4.45E-09) - *on my account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on my account*</u>
 ```
 # E:
 sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGwest.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 4000000 -i 1000 -x 10 -y t -L 90 -v 0.0009 0.0004 840000 0.01 .4 0 -r e 1.667 -o exsoutput 
@@ -508,7 +508,7 @@ sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf XLXGwest.in -u 4.45E-09 
 > **Results**: job killed (too long?), rerun: Ok, good mixing for 2 runs
 
 
-####    <u>With [new][2] mutation rate (4.45E-09) - *on Ben account*</u>
+####    <u>With [new](2) mutation rate (4.45E-09) - *on Ben account*</u>
 
 ```
 # D:
@@ -587,5 +587,4 @@ If we will not succeed in obtening a good mixing for the migration models with a
 ---------------------
 
 [Becquet 2010](http://przeworski.uchicago.edu/cbecquet/MIMARdoc.pdf)
-
-[2]:  
+[2](http://www.karger.com/?DOI=10.1159/000438910) 
