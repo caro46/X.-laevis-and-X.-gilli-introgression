@@ -432,7 +432,7 @@ sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 
 #XG_only_mimar_noM_Ax_FT 11807326 -> Bus error (memory access)
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00075 0 0 0 0 0 -r e 1.667 -o exsoutput
 
-#XG_only_mimar_noM_Ay_FT 11807327
+#XG_only_mimar_noM_Ay_FT 11807327 -> killed because of time even if for other 9000 min finished before 7days...
 sqsub -r 7d -o outputmimar ./mimar 9000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.00035 0 0 0 0 0 -r e 1.667 -o exsoutput
 
 #XG_only_mimar_noM_Az_FT 11807328 -> Bus error (memory access)
