@@ -94,7 +94,7 @@ sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 3.14e-9 -t u 
 sqsub -r 7d -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 3.14e-9 -t u 0.000005 0.03 -n u 0.000005 0.03 -ej u 0 50000 -N u 0.0000001 0.03 -i 1000 -x 10 -y t -L 90 -v 0.0007 0.0007 700000 0.004 .7 .7 -r e 1.667 -o exsoutput 
 
 ```
-####    <u>With [new](2) mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
+####    <u>With [new]([2]) mutation rate (4.45E-09) & equal populations (thetaA = theta 1(X.gilli) = theta2(X.laevis)) - *on my account*</u>
 ```
 # C:
 sqsub -r 1440m -o outputmimar ./mimar 4000 10000 14 -lf allXLXG.in -u 4.45E-09 -t u 0.000005 0.03 -ej u 0 4000000 -i 1000 -x 10 -y t -L 90 -v 0.0009 0.0004 840000 0.01 .4 0 -r e 1.667 -o exsoutput 
