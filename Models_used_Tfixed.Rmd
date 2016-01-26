@@ -971,6 +971,11 @@ sqsub -r 7d -o outputmimar_relauch ./mimar 8500 0 14 -R outputmimar-R 1.39e+06 0
 #XLXG_west_noM_Be_FT_relauch 11846390
 sqsub -r 7d -o outputmimar_relauch ./mimar 8500 0 14 -R outputmimar-R 1.596e+06 0.0186596 0.0186596 2.2106 1.67e+07 0.0186596 0 0 7.38225e-148 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0014 0 0 0 0 0 -r e 1.667 -o exsoutput-R
 ```
+Trouble with relauch so rerun Be from the beginning with the same seedmimar on iqaluk
+```
+#XLXG_west_noM_Be_new
+./mimar 17000 10000 14 -lf XLXGwest.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.0014 0 0 0 0 0 -r e 1.667 -o exsoutput >outputmimar
+```
 
 * <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
 
