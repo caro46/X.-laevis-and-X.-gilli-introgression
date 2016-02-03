@@ -453,6 +453,7 @@ We have trouble with the relauch result so we restart the Ap analysis from the b
 #XG_noM_Ap_new
 ./mimar 17000 10000 14 -lf XGonly.in -u 2.47E-09 -t u 0.000005 0.05 -ej 8500000 -i 2000 -x 100 -y t -L 90 -v 0.0005 0 0 0 0 0 -r e 1.667 -o exsoutput >outputmimar
 ```
+Run it again on info because killed on Iqaluk.
 
 * <u><font size=4>Different populations (thetaA # theta1 (east) # theta2 (west))</font></u>
 
@@ -723,6 +724,7 @@ Because of some issues with Kraken and relaunch, we redo some analysis from the 
 ./mimar 17000 10000 14 -lf XLXGeast.in -u 2.47E-09 -t u 0.000005 0.07 -ej 16700000 -i 2000 -x 100 -y t -L 90 -v 0.000002 0 0 0 0 0 -r e 1.667 -o exsoutput >outputmimar
 
 ```
+Run "new" again on info because killed on Iqaluk.
 
 . <u><font size=4>Different populations (thetaA # theta1 (X.gilli) # theta2 (X.laevis))</font></u>
 
