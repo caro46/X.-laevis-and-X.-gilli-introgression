@@ -1,0 +1,134 @@
+#Plot the Samples on a map using R
+
+```R
+setwd("C:/Users/caroline/Desktop/PhD/Introgression_X_gilli_laevis")
+
+some_coord <- read.table("gilli_laevis_some_coordinates.txt",sep="\t",head=T,
+                     na.string="",
+                     fill = TRUE,dec=".",
+                     quote=NULL, comment="")
+
+some_coord <- na.omit(some_coord)
+some_coord
+```
+##Libraries used
+```
+library(ggplot2)
+library(ggmap)
+library(RgoogleMaps)
+library(ggrepel)
+```
+```R
+LAT_DEC <- sapply(strsplit(as.character(some_coord$Coordinates), " "),"[",1)
+LONG_DEC <- sapply(strsplit(as.character(some_coord$Coordinates), " "),"[",2)
+some_coord$LAT_DEC <- as.numeric(LAT_DEC)
+some_coord$LONG_DEC <- as.numeric(LONG_DEC)
+#some_coord$LAT_DEC <- round(some_coord$LAT_DEC,2) # to try to avoid too many overlappings
+#some_coord$LONG_DEC <- round(some_coord$LONG_DEC,2)
+
+some_coord$Species <- gsub('gilli', 'X. gilli', some_coord$Species)
+some_coord$Species <- gsub('laevis', 'X. laevis', some_coord$Species)
+```
+Comments: 
+
+With R-studio the vizualization of the plots is not good: use:
+```R
+#png("map.png", width=1000, height=1000)
+#dev.off()
+```
+to print the plots. After open them to check if everything is OK.
+```R
+#Have the number of occurence for each location
+
+some_coord$to_count <- paste(some_coord$Species,some_coord$LAT_DEC,some_coord$LONG_DEC)
+t=table(some_coord$to_count)
+out=data.frame(to_count=names(unlist(t)),count=unlist(t)[],
+               stringsAsFactors=FALSE)
+rownames(out)=c()
+
+#Subset of the table without sample ID
+colnames(some_coord)
+without_name <- some_coord[,-1]
+#without_name <- without_name[,-6]
+dim(without_name)
+without_name <- unique(without_name)
+colnames(without_name)
+
+table_to_plot<-merge(without_name,out,by="to_count")
+colnames(table_to_plot)
+str(table_to_plot)
+
+table(some_coord$LONG_DEC)
+table(some_coord$LAT_DEC)
+
+#Plot on map
+mapTest <- get_map(location = c(lon = mean(table_to_plot$LONG_DEC), 
+                                lat = mean(table_to_plot$LAT_DEC)), 
+                   zoom = 10,
+                   scale = "auto",
+                   #maptype ="toner-lite"
+                   maptype ="satellite"
+                   #maptype ="watercolor"
+                   ,color="bw")
+                   
+
+p <- ggmap(mapTest
+   ) +
+  xlab(label = 'Longitude') +
+  ylab(label = 'Latitude') +
+  ggtitle("Sample map") 
+
+p+  geom_text(data = subset(table_to_plot,table_to_plot$Species=="X. gilli"), label=table_to_plot$count[table_to_plot$Species=="X. gilli"],aes(x = table_to_plot$LONG_DEC[table_to_plot$Species=="X. gilli"], y = table_to_plot$LAT_DEC[table_to_plot$Species=="X. gilli"]), 
+              size = 4,col="white")+
+    geom_text(data = subset(table_to_plot,table_to_plot$Species=="X. laevis"), label=table_to_plot$count[table_to_plot$Species=="X. laevis"],aes(x = table_to_plot$LONG_DEC[table_to_plot$Species=="X. laevis"], y = table_to_plot$LAT_DEC[table_to_plot$Species=="X. laevis"]), 
+              size = 4,vjust = 1.2,hjust=0.5)+
+    geom_text(data=table_to_plot,label="East", aes(x=18.50, y=-34.4),
+              color="black", size = 5, vjust = 0, hjust = 1)+
+    geom_text(data=table_to_plot,label="West", aes(x=19, y=-34.4),
+              color="black", size = 5, vjust = 0, hjust = -0)+
+    scale_color_manual(name="Species",values=c('#8C6BAF','#02675E'),labels=c("X.gilli","X.laevis"))
+
+## Use geom_label_repel to avoid overlappings
+
+p+geom_label_repel(data = table_to_plot, aes(x = LONG_DEC, y = LAT_DEC, label = count), 
+                   fill = as.numeric(as.factor(table_to_plot$Species))
+                   #"white"
+                   , box.padding = unit(.4, "lines"),
+                   label.padding = unit(.15, "lines"),
+                   segment.color = "black", segment.size = 1
+                   , fontface = "bold")
+
+##To have the same color as Ben
+
+p+geom_label_repel(data = subset(table_to_plot,table_to_plot$Species=="X. gilli")
+                   #, table_to_plot$count[table_to_plot$Species=="X. gilli"]
+                   ,aes(x = table_to_plot$LONG_DEC[table_to_plot$Species=="X. gilli"], y = table_to_plot$LAT_DEC[table_to_plot$Species=="X. gilli"]
+                   ,label=table_to_plot$count[table_to_plot$Species=="X. gilli"]), 
+                   fill = "#8C6BAF"
+                   #"white"
+                   , box.padding = unit(.4, "lines"),
+                   label.padding = unit(.15, "lines"),
+                   segment.color = "black", segment.size = 1
+                   , fontface = "bold"
+                   ,point.padding = unit(2.5, "lines"))+
+  geom_label_repel(data = subset(table_to_plot,table_to_plot$Species=="X. laevis")
+                   #, table_to_plot$count[table_to_plot$Species=="X. gilli"]
+                   ,aes(x = table_to_plot$LONG_DEC[table_to_plot$Species=="X. laevis"], y = table_to_plot$LAT_DEC[table_to_plot$Species=="X. laevis"]
+                        ,label=table_to_plot$count[table_to_plot$Species=="X. laevis"]), 
+                   fill = "#02675E"
+                   #"white"
+                   , box.padding = unit(.4, "lines"),
+                   label.padding = unit(.15, "lines"),
+                   segment.color = "black", segment.size = 1
+                   , fontface = "bold"
+                   ,point.padding = unit(0, "lines")
+                   ,show.legend=T)+
+  annotate("text", label = "Species", x = 19.05, y = -34.59, size = 4, colour = "black")+
+  geom_point(aes(x=19.03, y=-34.615), data=table_to_plot, size=1.5, shape=15, color="#02675E")+
+  geom_point(aes(x=19.03, y=-34.635), data=table_to_plot, size=1.5, shape=15, color="#8C6BAF")+
+  geom_text(data=table_to_plot,label="X. gilli", aes(x=19.05, y=-34.62),
+          color="black", size = 3, vjust = 0, hjust = 0)+
+  geom_text(data=table_to_plot,label="X. laevis", aes(x=19.05, y=-34.64),
+          color="black", size = 3, vjust = 0, hjust = 0)
+```
+
