@@ -306,3 +306,5 @@ Example of run command
 ```
 perl NCBI_names_convert_protein1.pl /Users/evanslab/Documents/caroline/Gilli_laevis_intro_NCBI_submission/sequences/fasta/fasta_submission/80return/protein/c7orf25_exon7_protein_NCBI.fas name_seq_analysis_ncbi.csv /Users/evanslab/Documents/caroline/Gilli_laevis_intro_NCBI_submission/sequences/fasta/fasta_submission/80return/protein/c7orf25_exon7_protein_NCBI_submission.fas
 ```
+March 24 - Need to be corrected:
+
