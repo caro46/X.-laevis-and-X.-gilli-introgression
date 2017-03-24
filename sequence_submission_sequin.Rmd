@@ -127,6 +127,10 @@ print "Done with input file 1\n";
 close OUTFILE;
 print "Done with output file \n";
 ```
+**Notes:**
+
+Sequin and NCBI adviced to not have gaps at the end and/or at the beginning of sequences. It requires ID that are `<=25 characters` (*Please limit the SeqID to 25 characters or less* from NCBI help). Even if apparently Sequin accept sequences in fasta format with a single line, in NCBI it is written to have a return after maximum 80 characters. Previously thought it was a reason why the files weren't accepted by Sequin (before it finally turned out to be a computer issue). Since everything seems to work fine on the new computer, we will keep the same format as the tested files that have a `80bp` return. 
+
 ## Protein file
 ### Information needed
 Same ID as the sequences from the nucleotide file, gene name and product. 
