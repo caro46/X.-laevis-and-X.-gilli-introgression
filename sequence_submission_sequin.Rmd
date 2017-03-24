@@ -1,0 +1,296 @@
+# Sequin
+
+## Before starting
+For some reason, Sequin is not working well when you install it on a linux machine using `sudo apt install ncbi-tools-x11`.
+The machine was crashing for each attempt with good files (some errors even when not crashing can also be related to the computer issue and not the files...).
+Needed to install on MacOS, `sequin.mac.dmg`, from [NCBI](https://www.ncbi.nlm.nih.gov/projects/Sequin/download/seq_mac_download.html).
+
+## Nucleotide file
+### Information needed
+ID of the sequence needs to be unique to one sequence (ID of the sample), more information are contained in `[]`. The `isolate` part is to make sure we identified the sample ID. 
+```
+>Jd_0_2 [organism=Xenopus gilli][collection-date=1994][note=WestCape][country=South Africa][isolate=Jd_0_2]
+```
+```perl
+#!/usr/local/perl5.24/perl-5.24.0/perl
+
+use strict;
+use warnings;
+use List::MoreUtils qw/ uniq /;
+use List::Util qw(min max);
+
+################################################################
+######### Naming NCBI sequences for submission##################
+################################################################
+
+## We have sequences in fasta format that need to be submitted to genebank  
+# but the ID name is too long and need to be separated into different subsections.
+# For each individual the name to be used is in a CSV file.
+# The output will be a sequence file in fasta format with the new NCBI name
+
+
+my ($fasta_file, $table_name, $new_name_NCBI_fasta) = @ARGV;
+ 
+if (not defined $fasta_file) {
+  die "Need a fasta file \n";
+}
+ 
+if (not defined $table_name) {
+  die "Need a file with the new sequence names\n";
+}
+
+if (not defined $new_name_NCBI_fasta) {
+  die "Need an output name \n";
+}
+
+unless (open DATAINPUT, $fasta_file) {
+		print "Can not find the input file $fasta_file.\n";
+		exit;
+}
+
+unless (open DATAINPUT1, $table_name) {
+		print "Can not find the input file $table_name.\n";
+		exit;
+}
+
+unless (open(OUTFILE, ">$new_name_NCBI_fasta")){
+        print "I can\'t write to $new_name_NCBI_fasta $!\n\n";
+        exit;
+}
+ 
+my %names;
+my @columnF1;
+my @temp;
+my $switch=0;
+my $complete_sequence=();
+my $sequence_name=();
+
+while (my $line1 = <DATAINPUT1>){
+	chomp($line1);
+    @columnF1=split(',',$line1);
+    #print $_, $/ for @columnF1;
+    #print $columnF1[0];
+    	if ($columnF1[0] ne 'name_seq_analysis'){
+        	#print "CHECK ",$columnF1[0]," ", $columnF1[1];
+        	$names{$columnF1[0]}=$columnF1[1];
+    }
+}
+
+while (my $line=<DATAINPUT>) {
+    chomp($line);
+    @temp=split(/[>\s]/,$line);
+
+    if($switch==1) {
+        if ($line!~/^>/){
+            $complete_sequence=$complete_sequence.$temp[0];
+        }
+        else {
+            $switch=0;
+            #print "CS ", $complete_sequence,"\n";
+            print OUTFILE ">",$sequence_name,"[source=",$sequence_name,"]","\n";
+            until(length($complete_sequence) < 80){
+            #print OUTFILE ">",$sequence_name,"\n",substr($complete_sequence, 0, 80),"\n";
+            print OUTFILE substr($complete_sequence, 0, 80),"\n";
+            $complete_sequence = substr($complete_sequence,80);
+            #$complete_sequence=();
+        }
+        print OUTFILE $complete_sequence,"\n";
+        $complete_sequence=();
+        }
+    }
+
+    if(defined($temp[1])){
+        #print "temp 1 ",$temp[1],"\n";
+        foreach my $old_name (keys %names) {
+            #print "key ",$old_name;
+                #if($old_name =~ /$temp[1]/) {
+                if(grep $_ eq $temp[1], $old_name){
+                    $sequence_name=$names{$old_name};
+                    #print "seq name ",$sequence_name;
+                    $switch=1;
+                }
+        }
+    }
+}
+print OUTFILE ">",$sequence_name,"[isolate=",$sequence_name,"]","\n";
+until(length($complete_sequence) < 80){
+    print OUTFILE substr($complete_sequence, 0, 80),"\n";
+    $complete_sequence = substr($complete_sequence,80);
+}
+print OUTFILE $complete_sequence,"\n";
+$complete_sequence=();
+
+close DATAINPUT;
+print "Done with input file \n";
+close DATAINPUT1;
+print "Done with input file 1\n";
+close OUTFILE;
+print "Done with output file \n";
+```
+## Protein file
+### Information needed
+Same ID as the sequences from the nucleotide file, gene name and product. 
+Other information present in the nucleotide file (country, organism, collection-date...) sould not appear on the protein file
+(need to be renamed). The protein translation from the CDS was obtained using `Mesquite version 1.0`.
+```
+>Jd_0_2 [gene=BTBD6][protein=BTB domain protein 6]
+```
+```perl
+#!/usr/local/perl5.24/perl-5.24.0/perl
+
+use strict;
+use warnings;
+use List::MoreUtils qw/ uniq /;
+use List::Util qw(min max);
+
+################################################################
+######### Naming NCBI sequences for submission##################
+################################################################
+
+## We have sequences in fasta format that need to be submitted to genebank  
+# but the ID name is too long and need to be separated into different subsections.
+# For each individual the name to be used is in a CSV file.
+# The output will be a sequence file in fasta format with the new NCBI name
+
+
+my ($fasta_file, $table_name, $new_name_NCBI_fasta) = @ARGV;
+ 
+if (not defined $fasta_file) {
+  die "Need a fasta file \n";
+}
+ 
+if (not defined $table_name) {
+  die "Need a file with the new sequence names\n";
+}
+
+if (not defined $new_name_NCBI_fasta) {
+  die "Need an output name \n";
+}
+
+unless (open DATAINPUT, $fasta_file) {
+		print "Can not find the input file $fasta_file.\n";
+		exit;
+}
+
+unless (open DATAINPUT1, $table_name) {
+		print "Can not find the input file $table_name.\n";
+		exit;
+}
+
+unless (open(OUTFILE, ">$new_name_NCBI_fasta")){
+        print "I can\'t write to $new_name_NCBI_fasta $!\n\n";
+        exit;
+}
+ 
+my %names;
+my @columnF1;
+my @temp;
+my $switch=0;
+my $complete_sequence=();
+my $sequence_name=();
+
+#This part can certainly be easily improved but for now we will go like that
+
+my $gene = "\[gene\=BTBD6\]";
+my $protein = "\[protein\=BTB domain protein 6\]";
+#my $gene = "[gene=C7orf25]";
+#my $protein = "[protein=hypothetical protein]";
+#my $gene = "[gene=fem1c]";
+#my $protein = "[protein=protein fem-1 homolog C]";
+#my $gene = "[gene=mastl]";
+#my $protein = "[protein=serine/threonine-protein kinase greatwall]";
+#my $gene = "[gene=mogs]";
+#my $protein = "[protein=mannosyl-oligosaccharide glucosidase]";
+#my $gene = "[gene=nfil3]";
+#my $protein = "[protein=nuclear factor interleukin-3-regulated protein]";
+#my $gene = "[gene=pcdh1]";
+#my $protein = "[protein=protocadherin-1]";
+#my $gene = "[gene=pigo]";
+#my $protein = "[protein=GPI ethanolamine phosphate transferase 3]";
+#my $gene = "[gene=prmt6]";
+#my $protein = "[protein=protein arginine N-methyltransferase 6]";
+#my $gene = "[gene=rassf10]";
+#my $protein = "[protein=ras association domain-containing protein 10]";
+#my $gene = "[gene=sugp2]";
+#my $protein = "[protein=SURP and G-patch domain-containing protein 2]";
+#my $gene = "[gene=zbed4]";
+#qmy $protein = "[protein=zinc finger BED domain-containing protein 4]";
+
+#need the number of sequence
+my $commandline;
+my $status;
+my $seq_number;
+# $commandline = "grep -c \">\" ".$fasta_file;
+# $status = `$commandline`;
+# $seq_number = $status;
+
+#print "Seq number ", $status;
+
+while (my $line1 = <DATAINPUT1>){
+	chomp($line1);
+    @columnF1=split(',',$line1);
+    #print $_, $/ for @columnF1;
+    #print $columnF1[0];
+    	if ($columnF1[0] ne 'name_seq_analysis'){
+        	#print "CHECK ",$columnF1[0]," ", $columnF1[2];
+        	$names{$columnF1[1]}=$columnF1[2];
+    }
+}
+
+while (my $line=<DATAINPUT>) {
+    chomp($line);
+    @temp=split(/[>\s]/,$line);
+
+    if($switch==1) {
+        if ($line!~/^>/){
+            $complete_sequence=$complete_sequence.$temp[0];
+        }
+        else {
+            $switch=0;
+            #print "CS ", $complete_sequence,"\n";
+            print OUTFILE ">",$sequence_name," ",$gene,$protein,"\n";
+            $sequence_name=();
+            until(length($complete_sequence) < 80){
+                print OUTFILE substr($complete_sequence, 0, 80),"\n";
+                $complete_sequence = substr($complete_sequence,80);
+            }
+            #print OUTFILE ">",$sequence_name," ",$gene,$protein,"\n",$complete_sequence,"\n";
+            #print "\>",$sequence_name," ",$gene,$protein,"\n",$complete_sequence,"\n";
+            #print "TRY1",$sequence_name," ",$complete_sequence,"\n";
+            print OUTFILE $complete_sequence,"\n";
+            $complete_sequence=();
+            $sequence_name=();
+        }
+        #$switch=0;
+    }
+
+    if(defined($temp[1])){
+        #print "temp 1 ",$temp[1],"\n";
+        foreach my $old_name (keys %names) {
+            #print "key ",$old_name;
+            #if($old_name =~ /$temp[1]/) { #not exact match, not good 
+            if(grep $_ eq $temp[1], $names{$old_name}){
+                $sequence_name=$names{$old_name};
+                print "seq name ",$sequence_name;
+                $switch=1;
+            }
+
+       }
+    }
+
+}
+print OUTFILE ">",$sequence_name," ",$gene,$protein,"\n";
+until(length($complete_sequence) < 80){
+    print OUTFILE substr($complete_sequence, 0, 80),"\n";
+    $complete_sequence = substr($complete_sequence,80);
+}
+print OUTFILE $complete_sequence,"\n";
+$complete_sequence=();
+
+close DATAINPUT;
+print "Done with input file \n";
+close DATAINPUT1;
+print "Done with input file 1\n";
+close OUTFILE;
+print "Done with output file \n";
+```
